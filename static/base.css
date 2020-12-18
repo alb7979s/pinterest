@@ -18,8 +18,7 @@
 }
 
 .block_content{
-    height: 20rem;
-    background-color: #38df81;
     border-radius: 1rem;
     margin: 2rem;
+    text-align: center;
 }
