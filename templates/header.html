@@ -11,6 +11,9 @@
             <a href="{% url 'accountApp:login' %}?next={{ request.path }}">
                 <span>login</span>
             </a>
+            <a href="{% url 'accountApp:create' %}">
+                <span>SignUp</span>
+            </a>
             {% else %}
             <a href="{% url 'accountApp:detail' pk=user.pk %}">
                 <span>MyPage</span>
