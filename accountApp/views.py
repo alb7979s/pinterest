@@ -12,7 +12,7 @@ from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from accountApp.decorators import account_ownership_required
 from accountApp.forms import AccountUpdateForm
 from accountApp.models import HelloWorld
-
+has_ownership = [account_ownership_required, login_required]
 @login_required
 def hello_world(request):
     if request.method == "POST":
@@ -38,10 +38,8 @@ class AccountDetailView(DetailView):
     context_object_name = 'target_user'
     template_name = 'accountApp/detail.html'
 
-@method_decorator(login_required, 'get')
-@method_decorator(login_required, 'post')
-@method_decorator(account_ownership_required, 'get')
-@method_decorator(account_ownership_required, 'post')
+@method_decorator(has_ownership, 'get')
+@method_decorator(has_ownership, 'post')
 class AccountUpdateView(UpdateView):
     model = User
     form_class = AccountUpdateForm
@@ -59,10 +57,8 @@ class AccountUpdateView(UpdateView):
         else:
             return HttpResponseForbidden()
 
-@method_decorator(login_required, 'get')
-@method_decorator(login_required, 'post')
-@method_decorator(account_ownership_required, 'get')
-@method_decorator(account_ownership_required, 'post')
+@method_decorator(has_ownership, 'get')
+@method_decorator(has_ownership, 'post')
 class AccountDeleteView(DeleteView):
     model = User
     context_object_name = 'target_user'
