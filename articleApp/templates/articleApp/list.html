@@ -21,47 +21,52 @@
 
 </style>
 
-<div class="container">
-    <div class="item1">
-        <img src="https://picsum.photos/200/300" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/300" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/150" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/260" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/100" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/300" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/290" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/230" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/100" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/200" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/310" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/350" alt="">
+    <div class="container">
+        <div class="item1">
+            <img src="https://picsum.photos/200/300" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/300" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/150" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/260" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/100" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/300" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/290" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/230" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/100" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/200" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/310" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/350" alt="">
+        </div>
+
     </div>
 
-</div>
-
-<script src="{% static 'js/magicgrid.js' %}">
-</script>
+    <div style="text-align:center">
+        <a href="{% url 'articleApp:create' %}" class="btn btn-dark rounded-pill col-3 mt-3 mb-3">
+            Create Article
+        </a>
+    </div>
+    <script src="{% static 'js/magicgrid.js' %}">
+    </script>
 
 {% endblock %}
