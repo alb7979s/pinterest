@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+<div>
+    <div class="mb-4">
+        <h4>
+            Update Profile
+        </h4>
+    </div>
+    <form action="{% url 'profileApp:update' pk=target_profile.pk%}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3">
+    </form>
+</div>
+{% endblock %}
