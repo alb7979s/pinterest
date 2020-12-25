@@ -8,7 +8,7 @@
             Delete Article: {{ target_article.title }}
         </h4>
     </div>
-    <form action="{% url 'articleApp:delete' target_article.pk %}" method="post">
+    <form action="{% url 'articleApp:delete' pk=target_article.pk %}" method="post">
         {% csrf_token %}
         <input type="submit" class="btn btn-danger rounded-pill col-6 mt-3">
     </form>
