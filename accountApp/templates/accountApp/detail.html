@@ -6,7 +6,8 @@
             <p>
                 {{ target_user.date_joined }}
             </p>
-            <img src="{{ target_user.profile.image.url }}" alt="" style="height: 12rem; width: 12rem; border-radius: 20rem; margin-bottom: 2rem;">
+            <!-- object-fit 요런거 원래 css로 다 빼야한대 -->
+            <img src="{{ target_user.profile.image.url }}" alt="" style="height: 12rem; width: 12rem; border-radius: 20rem; margin-bottom: 2rem; object-fit:cover;">
             {% if target_user.profile %}
             <h2 style="font-family: 'NanumSquareRoundOTFB'">
                 {{ target_user.nickname }}

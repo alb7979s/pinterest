@@ -3,24 +3,25 @@
         <div class="pinterest_logo">
             <h1>pinterest</h1>
         </div>
-        <div>
-            <a href="{% url 'articleApp:list' %}">
+        <div class="pinterest_header_navbar">
+            <a href="{% url 'articleApp:list' %}" class="pinterest_header_nav">
                 <span>Articles</span>
             </a>
-            <span>nav2</span>
-            <span>nav3</span>
+            <a href="{% url 'projectApp:list' %}" class="pinterest_header_nav">
+                <span>Projects</span>
+            </a>
             {% if not user.is_authenticated %}
-            <a href="{% url 'accountApp:login' %}?next={{ request.path }}">
+            <a href="{% url 'accountApp:login' %}?next={{ request.path }}" class="pinterest_header_nav">
                 <span>login</span>
             </a>
-            <a href="{% url 'accountApp:create' %}">
+            <a href="{% url 'accountApp:create' %}" class="pinterest_header_nav">
                 <span>SignUp</span>
             </a>
             {% else %}
-            <a href="{% url 'accountApp:detail' pk=user.pk %}">
+            <a href="{% url 'accountApp:detail' pk=user.pk %}" class="pinterest_header_nav">
                 <span>MyPage</span>
             </a>
-            <a href="{% url 'accountApp:logout' %}?next={{ request.path }}">
+            <a href="{% url 'accountApp:logout' %}?next={{ request.path }}" class="prgmatic_header_nav">
                 <span>logout</span>
             </a>
             {% endif %}
