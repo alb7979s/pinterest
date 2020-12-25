@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block cntent %}
+{% block content %}
 
     <div>
         <div style="text-align:center; max-width:500px; margin:4rem auto;">
@@ -12,6 +12,9 @@
             <h5 style="margin-bottom: 3rem;">
                 {{ target_project.description }}
             </h5>
+        </div>
+        <div>
+            {% include 'snippets/list_fragment.html' with article_list=object_list %}
         </div>
     </div>
 
