@@ -54,16 +54,6 @@ class AccountUpdateView(UpdateView):
     context_object_name = 'target_user'
     success_url = reverse_lazy('accountApp:hello_world')
     template_name = 'accountApp/update.html'
-    def get(self, *args, **kwargs):
-        if self.request.user.is_authenticated and self.get_object() == self.request.user:
-            return super().get(*args, **kwargs)
-        else:
-            return HttpResponseForbidden()
-    def post(self, *args, **kwargs):
-        if self.request.user.is_authenticated and self.get_object() == self.request.user:
-            return super().get(*args, **kwargs)
-        else:
-            return HttpResponseForbidden()
 
 @method_decorator(has_ownership, 'get')
 @method_decorator(has_ownership, 'post')
@@ -72,14 +62,3 @@ class AccountDeleteView(DeleteView):
     context_object_name = 'target_user'
     success_url = reverse_lazy('accountApp:login')
     template_name = 'accountApp/delete.html'
-
-    def get(self, *args, **kwargs):
-        if self.request.user.is_authenticated and self.get_object() == self.request.user:
-            return super().get(*args, **kwargs)
-        else:
-            return HttpResponseForbidden()
-    def post(self, *args, **kwargs):
-        if self.request.user.is_authenticated and self.get_object() == self.request.user:
-            return super().get(*args, **kwargs)
-        else:
-            return HttpResponseForbidden()
