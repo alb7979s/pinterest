@@ -10,9 +10,12 @@
             <a href="{% url 'projectApp:list' %}" class="pinterest_header_nav">
                 <span>Projects</span>
             </a>
+            <!-- 로그인 했을때만 구독정보 누를 수 있게 -->
+            {% if user.is_authenticated %}
             <a href="{% url 'subscriptionApp:list' %}" class="pinterest_header_nav">
                 <span>Subscription</span>
             </a>
+            {% endif %}
             {% if not user.is_authenticated %}
             <a href="{% url 'accountApp:login' %}?next={{ request.path }}" class="pinterest_header_nav">
                 <span>login</span>
